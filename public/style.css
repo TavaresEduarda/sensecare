@@ -1,0 +1,67 @@
+/* style.css */
+
+.logo-custom {
+    height: 100px; /* Define a altura da sua logo. Ajuste este valor. */
+    width: auto;  /* Mantém a proporção original */
+    margin-right: 40px; /* Adiciona um pequeno espaço entre a logo e o nome (SenseCare) */
+}
+
+.dashboard-main {
+    /* Cor de fundo base */
+    background-color: #f8f9fa; 
+    /* Imagem de fundo da onda */
+    background-image: url('minha-onda.svg');
+    
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Posiciona a imagem na parte inferior */
+    background-size: cover; /* Faz a imagem tentar cobrir a largura, mantendo a proporção */
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* Estilo para a Seção de Boas-vindas */
+.welcome-section {
+    background-color: #D6EAF8; /* Um azul bem claro para o fundo da seção */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px !important;
+}
+
+/* Estilo para o Ícone de Perfil */
+.profile-icon {
+    width: 200px;
+    height: 200px;
+    background-color: #4facfe; /* Cor de fundo customizada */
+    /* Para o ícone de dentro ficar branco, use a classe text-white no HTML */
+}
+
+/* Estilo Comum para os Cards de Ação */
+.action-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.action-card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+}
+
+/* Tamanho do Ícone nos Cards */
+.icon-size {
+    font-size: 4rem; /* Ícones grandes */
+}
+
+/* Gradientes Customizados para os Cards (Cores similares à imagem) */
+
+/* Gerenciar Pacientes (Azul/Ciano) */
+.card-gradient-1 {
+    background-image: linear-gradient(to right, #5DE0E6 0%, #004AAD 100%);
+}
+
+/* Agendar Cuidados (Verde/Azul Claro) */
+.card-gradient-2 {
+    background-image: linear-gradient(to right, #5DE0E6 0%, #004AAD 100%);
+}
+
+/* Histórico de Alertas (Azul escuro/Azul claro) */
+.card-gradient-3 {
+    background-image: linear-gradient(to right, #5DE0E6 0%, #004AAD 100%);
+}

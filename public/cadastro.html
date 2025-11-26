@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+        <main id="form_container">
+        <div id="form_header">
+            <h1 id="form_title">
+                cadastro
+            </h1>
+            <button class="btn-default">
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+        </div>
+
+        <form action="" id="form">
+            <div id="input_container">
+                <div class="input-box">
+                <label for="nome" class="form-label">Nome Completo</label>
+                <div class="input-field">
+                    <input type="text" name="nome" id="nome" class="form-control" placeholder="insira o nome Completo">
+                    <i class="fa-regular fa-user"></i>
+                    </div>
+                    <span class="erro"></span>
+                </div>
+
+                 <div class="input-box">
+                <label for="nome-mae" class="form-label">Nome Da Mãe</label>
+                <div class="input-field">
+                    <input type="text" name="nome-mae" id="nome-mae" class="form-control" placeholder="insira o nome da mãe">
+                    <i class="fa-regular fa-user"></i>
+                    </div>
+                    <span class="erro"></span>
+                </div>
+            
+                <div class="input-box">
+                <label for="nascimento" class="form-label">Data de nascimento</label>
+                <div class="input-field">
+                    <input type="date" name="date" id="data" class="form-control">
+                    </div>
+                    <span class="erro"></span>
+                </div>
+
+                 <div class="input-box">
+                <label for="cpf" class="form-label">CPF</label>
+                <div class="input-field">
+                    <input type="text" name="cpf" id="cpfCA" class="form-control" placeholder="000.000.000-00">
+                    </div>
+                    <span class="erro"></span>
+                </div>
+
+                 <div class="input-box">
+                <label for="telefone" class="form-label">telefone</label>
+                <div class="input-field">
+                    <input type="text" name="telefone" id="telefone" class="form-control">
+                    </div>
+                    <span class="erro"></span>
+                </div>
+                
+                 <div class="radio-container">
+                    <label class="form-label">Gênero</label>
+                    <div id="genero_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="genero" id="feminio" class="form-control" value="feminino">
+                            <label for="feminino" class="form-label">Feminino</label>
+                        </div>
+
+                          <div class="radio-container">
+                    <div id="genero_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="genero" id="masculino" class="form-control" value="masculino">
+                            <label for="masculino" class="form-label">Masculino</label>
+                        </div>
+
+                        <div class="radio-container">
+                    <div id="genero_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="genero" id="outro" class="form-control" value="outro">
+                            <label for="outro" class="form-label">Outro</label>
+                        </div>
+
+
+                 <div class="input-box">
+                <label for="alergias" class="form-label">Alergias</label>
+                <div class="input-field">
+                    <input type="text" name="alergias" id="alergias" class="form-control">
+                    </div>
+                </div>
+
+                <div class="input-box">
+                <label for="doenca" class="form-label">doenças</label>
+                <div class="input-field">
+                    <input type="text" name="doenca" id="doenca" class="form-control">
+                    </div>
+                </div>
+
+                <div class="input-box">
+                <label for="historico" class="form-label">Historico da doenças</label>
+                <div class="input-field">
+                    <input type="text" name="historico" id="historico" class="form-control">
+                    </div>
+                </div>
+
+                <div class="radio-container">
+                    <label class="form-label">Prioridade</label>
+                    <div id="prioridade_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="prioridade" id="anos" class="form-control" value="anos">
+                            <label for="anos" class="form-label">+60 anos</label>
+                        </div>
+
+                        <div class="radio-container">
+                    <div id="prioridade_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="prioridade" id="gestante" class="form-control" value="gestante">
+                            <label for="gestante" class="form-label">gestante</label>
+                        </div>
+
+                        <div class="radio-container">
+                    <div id="prioridade_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="prioridade" id="neuro" class="form-control" value="neuro">
+                            <label for="neuro" class="form-label">Neurodivergente</label>
+                        </div>
+
+                        <div class="radio-container">
+                    <div id="genero_inputs">
+                        <div class="radio-box">
+                            <input type="radio" name="genero" id="outro-genero" class="form-control" value="outro">
+                            <label for="outro" class="form-label">Outro</label>
+                        </div>
+
+                        <div class="check-container">
+                            <div id="infermeira_inputs">
+                                <label for="enfermeira">Enfermeira responsavel</label>
+                                <select name="enfermeira" id="enfermeira">
+                                    <option> </option>
+                                    <option>Marcia</option>
+                                    <option>Julia</option>
+                                    <option>Maria</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            
+            </div>
+            <button type="submit" class="btn-default">
+                <i class="fa-solid fa-check"></i>
+                    cadastrar
+            </button>
+        </form>
+    </main>
+</body>
+</html>
