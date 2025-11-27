@@ -1,0 +1,41 @@
+/* style.css */
+
+/* .bg-light-blue: Classe criada para definir o fundo azul claro da página, similar à imagem. */
+.bg-light-blue {
+    /* Cor de fundo: Você pode ajustar este código de cor (hex) */
+    background-color: #e6f0ff; 
+    /* Garante que o fundo cubra toda a altura da tela, prevenindo barras brancas. */
+    min-height: 100vh; 
+}
+
+/* #form_container: Pequenos ajustes de margem no card. */
+#form_container {
+    /* Adiciona margem superior e inferior para evitar que o card toque nas bordas da tela */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* .btn-outline-secondary: Ajustes de cor para o botão de ícone (Voltar/Login) para um visual neutro */
+.btn-outline-secondary {
+    border-color: #ced4da; /* Cor da borda mais clara */
+    color: #6c757d; /* Cor do ícone */
+}
+
+/* Efeito ao passar o mouse (hover) sobre o botão */
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa; /* Fundo levemente cinza */
+    border-color: #adb5bd; /* Borda um pouco mais escura */
+}
+
+/* .text-danger: Estilo para a mensagem de erro (span.erro), para ser discreta */
+.text-danger {
+    font-size: 0.85em; /* Diminui o tamanho da fonte */
+}
+
+.logo-nome {
+    height: 200px;      /* Ajuste conforme necessário */
+    max-width: 220px;  /* Limite máximo de largura */
+    width: auto;
+    display: block;
+    margin-bottom: 8px;
+}

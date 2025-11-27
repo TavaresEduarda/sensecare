@@ -1,16 +1,8 @@
-/* style.css */
-
-.logo-custom {
-    height: 100px; /* Define a altura da sua logo. Ajuste este valor. */
-    width: auto;  /* Mantém a proporção original */
-    margin-right: 40px; /* Adiciona um pequeno espaço entre a logo e o nome (SenseCare) */
-}
-
 .dashboard-main {
     /* Cor de fundo base */
     background-color: #f8f9fa; 
     /* Imagem de fundo da onda */
-    background-image: url('minha-onda.svg');
+    background-image: url('/imgs/minha-onda.svg');
     
     background-repeat: no-repeat;
     background-position: bottom center; /* Posiciona a imagem na parte inferior */
@@ -64,4 +56,23 @@
 /* Histórico de Alertas (Azul escuro/Azul claro) */
 .card-gradient-3 {
     background-image: linear-gradient(to right, #5DE0E6 0%, #004AAD 100%);
+}
+
+/* Estilo para o título na seção de boas-vindas */
+.welcome-section h2 {
+    color: #000000; /* Exemplo: roxo. Troque para a cor que preferir */
+}
+
+.logo-icon {
+    height: 48px;      /* Tamanho adequado para logo */
+    max-width: 120px;  /* Limite máximo de largura */
+    width: auto;
+    margin-right: 16px;
+    vertical-align: middle;
+}
+
+.logo-nome {
+    height: 48px; /* Nome maior */
+    width: auto;
+    vertical-align: middle;
 }

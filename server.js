@@ -15,7 +15,7 @@ const db = mysql.createConnection({
   host: "localhost", // Servidor do MySQL
   user: "root", // Usuário padrão do XAMPP
   password: "", // Senha (geralmente vazia no XAMPP)
-  database: "sensecare-db", // Nome do banco que você criou
+  database: "sensecare", // Nome do banco que você criou
 });
 
 // ---------- ROTAS ----------
@@ -27,7 +27,7 @@ const db = mysql.createConnection({
 
 // GET /pacientes → retorna todos os usuários do banco
 app.get("/paciente", (req, res) => {
-  db.query("SELECT * pacientes", (err, results) => {
+  db.query("SELECT * FROM pacientes", (err, results) => {
     if (err) throw err; // Se der erro na query, interrompe
     res.json(results); // Envia o resultado como JSON para o front
   });

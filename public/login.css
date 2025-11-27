@@ -1,0 +1,13 @@
+.bg-light-blue {
+    background-color: #e6f0ff; 
+    min-height: 100vh; /* Garante que o fundo cubra toda a altura da tela */
+}
+
+.logo-nome {
+    height: 200px;      /* Ajuste conforme necessário */
+    max-width: 220px;  /* Limite máximo de largura */
+    width: auto;
+    display: block;
+    margin-bottom: 8px;
+}
+
