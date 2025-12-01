@@ -76,3 +76,9 @@
     width: auto;
     vertical-align: middle;
 }
+
+.action-card[type="button"] {
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* mantém sombra */
+}

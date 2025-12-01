@@ -53,7 +53,7 @@
                                 <label for="nome-mae" class="form-label">Nome Da Mãe</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                                    <input type="text" name="nome-mae" id="nome-mae" class="form-control" placeholder="Insira o nome da mãe">
+                                    <input type="text" id="nome_mae" class="form-control" placeholder="Insira o nome da mãe">
                                 </div>
                                 <span class="erro text-danger small"></span>
                             </div>
@@ -61,7 +61,7 @@
                             <!-- Campo Data de Nascimento -->
                             <div class="col-md-6">
                                 <label for="data" class="form-label">Data de nascimento</label>
-                                <input type="date" name="date" id="data" class="form-control">
+                                <input type="date" id="data" class="form-control">
                                 <span class="erro text-danger small"></span>
                             </div>
 
@@ -169,6 +169,10 @@
                                     <i class="fa-solid fa-check me-2"></i>
                                     Cadastrar
                                 </button>
+
+                                <section id="lista-pacientes">
+                                    <ul id="lista"></ul>
+                                </section>
                             </div>
                         </div>
                     </form>
@@ -180,4 +184,5 @@
     <!-- Script do Bootstrap para funcionalidades JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script src="cadastro.js"></script>
 </html>

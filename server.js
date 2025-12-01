@@ -26,22 +26,46 @@ const db = mysql.createConnection({
 // })
 
 // GET /pacientes → retorna todos os usuários do banco
-app.get("/paciente", (req, res) => {
-  db.query("SELECT * FROM pacientes", (err, results) => {
+app.get("/Paciente", (req, res) => {
+  db.query("SELECT * FROM paciente", (err, results) => {
     if (err) throw err; // Se der erro na query, interrompe
     res.json(results); // Envia o resultado como JSON para o front
   });
 });
 
 // POST /usuarios → insere um novo usuário no banco
-app.post("/usuarios", (req, res) => {
-  const { nome, email } = req.body; // Extrai os dados enviados pelo front
+app.post("/Paciente", (req, res) => {
+  const {
+    Nome,
+    Nome_mae,
+    Data_nasc,
+    CPF,
+    Genero,
+    Alergias,
+    Neurodiv,
+    Endereco,
+    Contato_emergencia,
+    CNPJ_Hospital,
+    CorenFK
+  } = req.body; // Extrai os dados enviados pelo front
   db.query(
-    "INSERT INTO usuarios (nome, email) VALUES (?, ?)", // Query SQL com placeholders
-    [nome, email], // Valores que substituem os "?"
+    "INSERT INTO Paciente (Nome, Nome_mae, Data_nasc, CPF, Genero, Alergias, Neurodiv, Endereco, Contato_emergencia, CNPJ_Hospital, CorenFK) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
+    [
+      Nome,
+      Nome_mae,
+      Data_nasc,
+      CPF,
+      Genero,
+      Alergias,
+      Neurodiv,
+      Endereco,
+      Contato_emergencia,
+      CNPJ_Hospital,
+      CorenFK
+    ], // Valores que substituem os "?"
     (err, result) => {
       if (err) throw err;
-      res.json({ message: "Usuário adicionado com sucesso!" }); // Retorno de sucesso
+      res.json({ message: "Paciente adicionado com sucesso!" }); // Retorno de sucesso
     }
   );
 });
