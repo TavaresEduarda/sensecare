@@ -33,7 +33,7 @@ app.get("/Paciente", (req, res) => {
   });
 });
 
-// POST /usuarios → insere um novo usuário no banco
+// POST /Paciente → insere um novo paciente no banco
 app.post("/Paciente", (req, res) => {
   const {
     Nome,
@@ -45,26 +45,29 @@ app.post("/Paciente", (req, res) => {
     Neurodiv,
     Endereco,
     Contato_emergencia,
-    CNPJ_Hospital,
-    CorenFK
+    CorenFK,// O COREN da enfermeira que vem do front-end
+    Prioridade_Atendimento,
+    Condicao_Especial
   } = req.body; // Extrai os dados enviados pelo front
   db.query(
-    "INSERT INTO Paciente (Nome, Nome_mae, Data_nasc, CPF, Genero, Alergias, Neurodiv, Endereco, Contato_emergencia, CNPJ_Hospital, CorenFK) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
+    "INSERT INTO Paciente (Nome, Nome_mae, Data_nasc, CPF, Genero, Alergias, Neurodiv, Endereco, Contato_emergencia, CorenFK, Prioridade_Atendimento, Condicao_Especial) VALUES (?,?,? ?, ?, ?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
     [
-      Nome,
-      Nome_mae,
-      Data_nasc,
-      CPF,
-      Genero,
-      Alergias,
-      Neurodiv,
-      Endereco,
-      Contato_emergencia,
-      CNPJ_Hospital,
-      CorenFK
+    Nome,
+    Nome_mae,
+    Data_nasc,
+    CPF,
+    Genero,
+    Alergias,
+    Neurodiv,
+    Endereco,
+    Contato_emergencia,
+    CorenFK, // O valor de CorenFK (o número)
+    Prioridade_Atendimento, 
+    Condicao_Especial
     ], // Valores que substituem os "?"
     (err, result) => {
       if (err) throw err;
+  
       res.json({ message: "Paciente adicionado com sucesso!" }); // Retorno de sucesso
     }
   );

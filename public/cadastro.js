@@ -1,4 +1,29 @@
-const form = document.getElementById("form");
+// Simulação dos dados que viriam do seu back-end (Node.js)
+const listaEnfermeiros = [
+    { coren: '123456', nome: 'Márcia Silva' },
+    { coren: '654321', nome: 'João Santos' },
+    { coren: '987654', nome: 'Ana Carolina' }
+];
+
+const selectElement = document.getElementById('corenEnfermeira');
+
+// Função para preencher o <select>
+function preencherEnfermeiros() {
+    listaEnfermeiros.forEach(enfermeiro => {
+        const option = document.createElement('option');
+        // O valor enviado é o COREN
+        option.value = enfermeiro.coren; 
+        // O texto visível é o Nome
+        option.textContent = enfermeiro.nome; 
+        selectElement.appendChild(option);
+    });
+}
+
+preencherEnfermeiros();
+
+
+
+const form = document.querySelector("form");
 const lista = document.getElementById("lista");
 
 // Função para carregar pacientes
@@ -29,8 +54,9 @@ form.addEventListener("submit", async (e) => {
     const Neurodiv = document.getElementById("doenca").value || "";
     const Endereco = document.getElementById("historico").value || "";
     const Contato_emergencia = document.getElementById("telefone").value;
-    const CNPJ_Hospital = ""; // Preencha conforme necessário
-    const CorenFK = document.getElementById("enfermeira").value;
+    const CorenFK = document.getElementById("corenEnfermeira").value;
+    const Prioridade_Atendimento = document.querySelector('input[name="prioridade_atendimento"]:checked')?.value; 
+    const Condicao_Especial = document.querySelector('input[name="condicao_especial"]:checked')?.value;
 
 
     // Envia o cadastro
@@ -47,14 +73,16 @@ form.addEventListener("submit", async (e) => {
             Neurodiv,
             Endereco,
             Contato_emergencia,
-            CNPJ_Hospital,
-            CorenFK
+            CorenFK,
+            Prioridade_Atendimento, 
+            Condicao_Especial
         }),
     });
 
     form.reset();
     carregarPacientes(); // Atualiza lista logo abaixo
+
+    
 });
 
 
-// nao consigo fazer esse lixo funcionar *pedir ajuda do sor na proxima aula :)*

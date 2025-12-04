@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="cadastro.css"> 
 </head>
 <body class="bg-light-blue">
+ <form>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10 col-sm-12">
@@ -134,32 +135,55 @@
                             
                             <!-- Campo Prioridade de Atendimento (radio) -->
                             <div class="col-md-6">
-                                <label class="form-label d-block mb-2">Prioridade de Atendimento</label>
-                                <div id="prioridade_inputs" class="d-flex justify-content-start gap-3">
-                                    <!-- Opções de prioridade -->
+                                <label class="form-label d-block mb-2">Condições Especiais</label>
+                                <div id="condicoes_especiais_inputs" class="d-flex justify-content-start gap-3">
+                                     <div class="form-check form-check-inline">
+                                         <input class="form-check-input" type="radio" name="Condicao_Especial" id="anos" value="+60 anos">
+                                         <label class="form-check-label" for="anos">+60 anos</label>
+                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="anos" value="anos">
-                                        <label class="form-check-label" for="anos">+60 anos</label>
+                                            <input class="form-check-input" type="radio" name="Condicao_Especial" id="gestante" value="Gestante">
+                                            <label class="form-check-label" for="gestante">Gestante</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="gestante" value="gestante">
-                                        <label class="form-check-label" for="gestante">Gestante</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="prioridade" id="neuro" value="neuro">
+                                        <input class="form-check-input" type="radio" name="Condicao_Especial" id="neuro" value="Neurodivergente">
                                         <label class="form-check-label" for="neuro">Neurodivergente</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Condicao_Especial" id="nenhuma" value="Nenhuma" checked>
+                                        <label class="form-check-label" for="nenhuma">Nenhuma</label>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div class="col-md-7">
+                                
+                                <label class="form-label d-block mb-2">Prioridade de Atendimento</label>
+                                <div id="prioridade_atendimento_inputs" class="d-flex justify-content-start gap-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Prioridade_Atendimento" id="prioridadeAlta" value="Alta" required>
+                                        <label class="form-check-label" for="prioridadeAlta">Alta</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Prioridade_Atendimento" id="prioridadeMedia" value="Media">
+                                        <label class="form-check-label" for="prioridadeMedia">Média</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="Prioridade_Atendimento" id="prioridadeBaixa" value="Baixa">
+                                        <label class="form-check-label" for="prioridadeBaixa">Baixa</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
 
                             <!-- Campo Enfermeira Responsável (select) -->
                             <div class="col-md-6">
                                 <label for="enfermeira" class="form-label">Enfermeira Responsável</label>
-                                <select name="enfermeira" id="enfermeira" class="form-select">
+                                <select name="corenEnfermeira" id="corenEnfermeira" class="form-select">
                                     <option value="">Selecione a enfermeira</option>
-                                    <option>Marcia</option>
-                                    <option>Julia</option>
-                                    <option>Maria</option>
+                                    <option value="SP12345">Ana Paula Souza</option>
+                                    <option value="SP23456">Carlos Mendes</option>
+                                    <option value="SP34567">Juliana Rocha</option>
                                 </select>
                             </div>
                             
@@ -170,9 +194,9 @@
                                     Cadastrar
                                 </button>
 
-                                <section id="lista-pacientes">
+                                <div id="lista-pacientes">
                                     <ul id="lista"></ul>
-                                </section>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -180,6 +204,7 @@
             </div>
         </div>
     </div>
+ </form>
 
     <!-- Script do Bootstrap para funcionalidades JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
