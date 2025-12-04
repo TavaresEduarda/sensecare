@@ -25,8 +25,30 @@ CREATE TABLE Paciente(
     foreign key(Corenfk) references Enfermeiros(Coren)
 );
 
-alter table Pulseira
-add Id_pulseira char(4) not null;
+DESCRIBE Paciente;
+-- Use este comando SOMENTE se você confirmar que a coluna 'Prioridade' é a duplicada
+ALTER TABLE Paciente DROP COLUMN Prioridade;
+
+ALTER TABLE Paciente
+ADD COLUMN Prioridade_Atendimento VARCHAR(5) CHECK (Prioridade_Atendimento IN ('Baixa', 'Media', 'Alta')) NULL;
+
+ALTER TABLE Paciente 
+ADD COLUMN Prioridade_Atendimento VARCHAR(5) NULL 
+CHECK (Prioridade_Atendimento IN ('Alta', 'Media', 'Baixa'));
+
+ALTER TABLE Paciente 
+ADD COLUMN Condicao_Especial VARCHAR(20) NULL 
+CHECK (Condicao_Especial IN ('+60 anos', 'Gestante', 'Neurodivergente', 'Nenhuma'));
+
+ALTER TABLE Paciente
+ADD COLUMN Doencas_Cronicas VARCHAR(100),
+ADD COLUMN Historico_Familiar VARCHAR(100);
+
+ALTER TABLE Paciente
+DROP FOREIGN KEY CNPJ_Hospital;
+
+ALTER TABLE paciente
+DROP INDEX CNPJ_Hospital;
 
 CREATE TABLE Enfermeiros(
 	Nome varchar(70) not null,
@@ -65,6 +87,9 @@ select * FROM Enfermeiros;
 select * FROM Paciente;
 select * FROM Clientes;
 select * FROM Pulseira;
+
+ALTER TABLE Paciente
+MODIFY COLUMN CNPJ_Hospital VARCHAR(14) NULL;
 
 
 INSERT INTO Hospital (CNPJ, Nome, Endereço, Capacidade_leito)
