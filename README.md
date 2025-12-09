@@ -115,3 +115,38 @@ A documentação deverá incluir:
 * **Objetivo da pulseira**.
 
 ---
+
+
+# 🏥 SenseCare Project
+
+Este documento fornece as instruções necessárias para configurar e executar o projeto **SenseCare** localmente.
+
+---
+
+## 💻 Requisitos de Sistema e Instalação
+
+Para rodar o projeto SenseCare em seu ambiente local, você precisará ter os seguintes softwares instalados:
+
+* **Node.js**: Versão **14.x ou superior**.
+* **XAMPP (ou similar)**: Para gerenciar o servidor **Apache** e o banco de dados **MySQL**.
+* **Git**: Para clonar o repositório do projeto.
+
+---
+
+## 1. Preparação do Ambiente e Clonagem
+
+### 1.1. Configuração do Banco de Dados (MySQL)
+
+Esta etapa envolve a criação do banco de dados que será utilizado pelo SenseCare.
+
+1.  **Inicie o XAMPP**:
+    Abra o painel de controle do XAMPP e **inicie os serviços Apache e MySQL**.
+2.  **Crie o Banco de Dados**
+
+### 1.2. Clonagem do Projeto
+
+Abra seu **terminal** ou **prompt de comando** e execute os comandos abaixo para clonar o repositório e navegar até a pasta do projeto:
+
+```bash
+git clone [https://github.com/SEU_USUARIO/sensecare.git](https://github.com/SEU_USUARIO/sensecare.git)
+cd sensecare

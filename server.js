@@ -33,6 +33,7 @@ app.get("/Paciente", (req, res) => {
   });
 });
 
+
 // POST /Paciente → insere um novo paciente no banco
 app.post("/Paciente", (req, res) => {
   const {
@@ -45,12 +46,12 @@ app.post("/Paciente", (req, res) => {
     Neurodiv,
     Endereco,
     Contato_emergencia,
-    CorenFK,// O COREN da enfermeira que vem do front-end
+    CorenFK,
     Prioridade_Atendimento,
     Condicao_Especial
   } = req.body; // Extrai os dados enviados pelo front
   db.query(
-    "INSERT INTO Paciente (Nome, Nome_mae, Data_nasc, CPF, Genero, Alergias, Neurodiv, Endereco, Contato_emergencia, CorenFK, Prioridade_Atendimento, Condicao_Especial) VALUES (?,?,? ?, ?, ?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
+    "INSERT INTO Paciente (Nome, Nome_mae, Data_nasc, CPF, Genero, Alergias, Neurodiv, Endereco, Contato_emergencia, CorenFK, Prioridade_Atendimento, Condicao_Especial) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", // Query SQL com placeholders
     [
     Nome,
     Nome_mae,
@@ -61,7 +62,7 @@ app.post("/Paciente", (req, res) => {
     Neurodiv,
     Endereco,
     Contato_emergencia,
-    CorenFK, // O valor de CorenFK (o número)
+    CorenFK, 
     Prioridade_Atendimento, 
     Condicao_Especial
     ], // Valores que substituem os "?"

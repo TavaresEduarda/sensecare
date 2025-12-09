@@ -1,20 +1,20 @@
-// Simulação dos dados que viriam do seu back-end (Node.js)
+// ===============================
+// Preenche o select de enfermeiras
+// ===============================
+
 const listaEnfermeiros = [
-    { coren: '123456', nome: 'Márcia Silva' },
-    { coren: '654321', nome: 'João Santos' },
-    { coren: '987654', nome: 'Ana Carolina' }
+    { coren: 'SP12345', nome: 'Ana Paula Souza' },
+    { coren: 'SP23456', nome: 'Carlos Mendes' },
+    { coren: 'SP34567', nome: 'Juliana Rocha' }
 ];
 
 const selectElement = document.getElementById('corenEnfermeira');
 
-// Função para preencher o <select>
 function preencherEnfermeiros() {
     listaEnfermeiros.forEach(enfermeiro => {
         const option = document.createElement('option');
-        // O valor enviado é o COREN
-        option.value = enfermeiro.coren; 
-        // O texto visível é o Nome
-        option.textContent = enfermeiro.nome; 
+        option.value = enfermeiro.coren;
+        option.textContent = enfermeiro.nome;
         selectElement.appendChild(option);
     });
 }
@@ -22,45 +22,33 @@ function preencherEnfermeiros() {
 preencherEnfermeiros();
 
 
+// ===============================
+// SUBMIT DO FORMULÁRIO
+// ===============================
 
-const form = document.querySelector("form");
-const lista = document.getElementById("lista");
-
-// Função para carregar pacientes
-async function carregarPacientes() {
-  const resposta = await fetch("/Paciente");
-  const pacientes = await resposta.json();
-
-  lista.innerHTML = "";
-  pacientes.forEach((p) => {
-    const li = document.createElement("li");
-    li.textContent = `${p.Nome} - ${p.CPF} - ${p.Genero} - ${p.Contato_emergencia}`;
-    lista.appendChild(li);
-  });
-}
-
-// Chama ao carregar a página
-window.addEventListener("DOMContentLoaded", carregarPacientes);
+const form = document.getElementById("form");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    // Pegue os valores dos campos do formulário
+
+    // Pega os valores
     const Nome = document.getElementById("nome").value;
     const Nome_mae = document.getElementById("nome_mae").value;
     const Data_nasc = document.getElementById("data").value;
     const CPF = document.getElementById("cpfCA").value;
     const Genero = document.querySelector('input[name="genero"]:checked')?.value;
     const Alergias = document.getElementById("alergias").value;
-    const Neurodiv = document.getElementById("doenca").value || "";
-    const Endereco = document.getElementById("historico").value || "";
+    const Neurodiv = document.getElementById("doenca").value;
+    const Endereco = document.getElementById("historico").value;
     const Contato_emergencia = document.getElementById("telefone").value;
     const CorenFK = document.getElementById("corenEnfermeira").value;
-    const Prioridade_Atendimento = document.querySelector('input[name="prioridade_atendimento"]:checked')?.value; 
-    const Condicao_Especial = document.querySelector('input[name="condicao_especial"]:checked')?.value;
 
+    // CORRIGIDO: nomes exatos dos campos no HTML
+    const Prioridade_Atendimento = document.querySelector('input[name="Prioridade_Atendimento"]:checked')?.value;
+    const Condicao_Especial = document.querySelector('input[name="Condicao_Especial"]:checked')?.value;
 
-    // Envia o cadastro
-    await fetch("/Paciente", {
+    // Envia o POST
+    const response = await fetch("/Paciente", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -74,15 +62,16 @@ form.addEventListener("submit", async (e) => {
             Endereco,
             Contato_emergencia,
             CorenFK,
-            Prioridade_Atendimento, 
+            Prioridade_Atendimento,
             Condicao_Especial
         }),
     });
 
-    form.reset();
-    carregarPacientes(); // Atualiza lista logo abaixo
-
-    
+    // Resposta do servidor
+    if (response.ok) {
+        alert("Paciente cadastrado com sucesso!");
+        form.reset(); // limpa o form
+    } else {
+        alert("Erro ao cadastrar paciente.");
+    }
 });
-
-
