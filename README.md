@@ -117,7 +117,6 @@ A documentação deverá incluir:
 ---
 
 
-# 🏥 SenseCare Project
 
 Este documento fornece as instruções necessárias para configurar e executar o projeto **SenseCare** localmente.
 
