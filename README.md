@@ -149,3 +149,22 @@ Abra seu **terminal** ou **prompt de comando** e execute os comandos abaixo para
 ```bash
 git clone [https://github.com/SEU_USUARIO/sensecare.git](https://github.com/SEU_USUARIO/sensecare.git)
 cd sensecare
+
+
+2.1. Instalação das Dependências
+Na pasta raiz do projeto (sensecare), instale as bibliotecas necessárias para o Node.js/Express:
+
+Bash
+
+npm init -y
+npm install express mysql2
+
+2.2. Rodar o Servidor Express
+Com todas as dependências instaladas, inicie o backend do servidor Node.js/Express a partir do terminal (ainda dentro da pasta do projeto):
+
+Bash
+
+node server.js
+O SenseCare estará agora acessível em seu navegador no endereço:
+
+👉 http://localhost:3000 (assumindo a porta padrão).
